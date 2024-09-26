@@ -1,0 +1,93 @@
+{
+    "world": {
+        "version": "1.3",
+        "dateCreated": "2024-09-26",
+        "name": "XML_Pasaulis",
+        "players": [
+            {
+                "id": "1",
+                "isAdmin": true,
+                "name": "XML_Entuziastas",
+                "dateJoined": "2024-09-26",
+                "maxHealth": 500.0,
+                "currentHealth": 459.0,
+                "position": {
+                    "x": 17.93,
+                    "y": 226.6
+                },
+                "inventory": [
+                    {
+                        "itemType": "ironSword"
+                    },
+                    {
+                        "itemType": "woodenBow"
+                    },
+                    {
+                        "itemType": "flintArrow",
+                        "quantity": 67
+                    },
+                    {
+                        "itemType": "healingPotion",
+                        "quantity": 8
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "isAdmin": false,
+                "name": "JSON_Mėgėjas",
+                "dateJoined": "2024-09-26",
+                "maxHealth": 500.0,
+                "currentHealth": 23.0,
+                "position": {
+                    "x": 17.93,
+                    "y": 226.6
+                },
+                "inventory": [
+                    {
+                        "itemType": "goldSword"
+                    },
+                    {
+                        "itemType": "ironBow"
+                    },
+                    {
+                        "itemType": "ironArrow",
+                        "quantity": 67
+                    },
+                    {
+                        "itemType": "healingPotion",
+                        "quantity": 8
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "isAdmin": false,
+                "name": "HTML_Fanas",
+                "dateJoined": "2024-09-26",
+                "maxHealth": 500.0,
+                "currentHealth": 226.0,
+                "position": {
+                    "x": 17.93,
+                    "y": 226.6
+                },
+                "inventory": [
+                    {
+                        "itemType": "goldSword"
+                    },
+                    {
+                        "itemType": "ironBow"
+                    },
+                    {
+                        "itemType": "ironArrow",
+                        "quantity": 67
+                    },
+                    {
+                        "itemType": "healingPotion",
+                        "quantity": 8
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<world version="1.3"
+    xmlns:world="urn:world"
+    xmlns:player="urn:player"
+>
+    <world:dateCreated>2024-09-26</world:dateCreated>
+    <world:name>XML_Pasaulis</world:name>
+
+    <world:players>
+        <player:player id="1" isAdmin="true">
+            <player:name>XML_Entuziastas</player:name>
+            <player:dateJoined>2024-09-26</player:dateJoined>
+            <player:maxhealth>500.0</player:maxhealth>
+            <player:currentHealth>459.0</player:currentHealth>
+            <player:position>
+                <player:x>17.93</player:x>
+                <player:y>226.6</player:y>
+            </player:position>
+            <player:inventory>
+                <item itemType="ironSword" />
+                <item itemType="woodenBow" />
+                <item itemType="flintArrow">
+                    <quantity>67</quantity>
+                </item>
+                <item itemType="healingPotion">
+                    <quantity>8</quantity>
+                </item>
+            </player:inventory>
+        </player:player>
+
+        <player:player id="2" isAdmin="false">
+            <player:name>JSON_Mėgėjas</player:name>
+            <player:dateJoined>2024-09-26</player:dateJoined>
+            <player:maxhealth>500.0</player:maxhealth>
+            <player:currentHealth>23.0</player:currentHealth>
+            <player:position>
+                <player:x>17.93</player:x>
+                <player:y>226.6</player:y>
+            </player:position>
+            <player:inventory>
+                <item itemType="goldSword" />
+                <item itemType="ironBow" />
+                <item itemType="ironArrow">
+                    <quantity>67</quantity>
+                </item>
+                <item itemType="healingPotion">
+                    <quantity>8</quantity>
+                </item>
+            </player:inventory>
+        </player:player>
+
+        <player:player id="3" isAdmin="false">
+            <player:name>JSON_Mėgėjas</player:name>
+            <player:dateJoined>2024-09-26</player:dateJoined>
+            <player:maxhealth>500.0</player:maxhealth>
+            <player:currentHealth>500.0</player:currentHealth>
+            <player:position>
+                <player:x>17.93</player:x>
+                <player:y>226.6</player:y>
+            </player:position>
+            <player:inventory>
+                <item itemType="goldSword" />
+                <item itemType="ironBow" />
+                <item itemType="ironArrow">
+                    <quantity>67</quantity>
+                </item>
+                <item itemType="healingPotion">
+                    <quantity>8</quantity>
+                </item>
+            </player:inventory>
+        </player:player>
+    </world:players>
+</world>

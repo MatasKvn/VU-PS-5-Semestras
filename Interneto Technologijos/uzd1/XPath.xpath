@@ -1,0 +1,15 @@
+//player:player[@id=1][ancestor::world]
+//player:player[descendant::item[@itemType="ironBow"]]
+//item[following-sibling::item[@itemType!="goldSword" and @itemType="ironBow"]]
+//item[preceding-sibling::item[@itemType="goldSword" or @itemType="flintArrow"]]
+//item[preceding::item/quantity]
+//*[attribute::itemType and preceding::player]
+
+/world/players/player[currentHealth>20 and currentHealth<480]
+/world/players/player[currentHealth>20 and currentHealth<480 and attribute::id!=1 and preceding-sibling::player]
+
+3.
+count(//*[not(*) and string-length()>0])
+number(number(.))
+
+//item/quantity | //name
