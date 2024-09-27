@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sudoku</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="index.js" type="module"></script>
+    <base href=".">
+</head>
+<body>
+    <main>
+        <div class="modal-container" id="loading-modal">
+            <div class="modal">
+                <h1 class="m-auto">Welcome to Sudoku</h1>
+                <button id="start-btn" class="m-auto">...Loading</button>
+            </div>
+        </div>
+        <div class="modal-container hidden" id="congrats-modal">
+            <div class="modal">
+                <h1 class="congratulation-text m-auto">Congratulations!!! 🎉🎉🎉</h1>
+                <h2 class="m-auto">Your solution is correct!</h2>
+                <button id="replay-btn" class="m-auto">Replay</button>
+            </div>
+        </div>
+        <div class="container">
+            <div id="sudoku-container">...Loading</div>
+            <div class="btn-container">
+                <button id="submit-solution-btn" class="buttonxd">Submit</button>
+                <button id="reset-btn" class="buttonxd">Reset</button>
+            </div>
+            <h3 id="indicator-text" class="m-autoX"></h3>
+        </div>
+    </main>
+</body>
+</html>

@@ -51,7 +51,7 @@
         </player:player>
 
         <player:player id="3" isAdmin="false">
-            <player:name>JSON_Mėgėjas</player:name>
+            <player:name>HTML_Fanas</player:name>
             <player:dateJoined>2024-09-26</player:dateJoined>
             <player:maxhealth>500.0</player:maxhealth>
             <player:currentHealth>500.0</player:currentHealth>
