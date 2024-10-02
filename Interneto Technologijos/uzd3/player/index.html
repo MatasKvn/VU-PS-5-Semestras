@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gaming</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- <script src="index.js" type="module"></script> -->
+    <base href=".">
+</head>
+<body>
+    <header>
+        <div>idk</div>
+    </header>
+    <main>
+        <form class="register-form">
+            <div class="form-element">
+                <label>Username:</label><br/>
+                <input type="text" name="username"/>
+            </div>
+
+            <div class="form-element"></div>
+                <label>Email:</label><br/>
+                <input type="text" name="email" required pattern="^\w{1,255}@\w{1,255}.\w{1,255}$"/>
+            </div>
+        
+            <div class="form-element"></div>
+                <label>Age:</label><br/>
+                <input type="range" name="age"/>
+            </div>
+
+            <div>
+                <a href="./player/index.html">
+                    <button type="submit" value="submit">Register</button>
+                </a>
+            </div>
+        </form>
+        <div id="image"></div>
+        
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

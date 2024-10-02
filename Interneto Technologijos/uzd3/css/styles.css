@@ -1,0 +1,61 @@
+:root {
+    --header-height: 7vh;
+    --footer-height: 12vh;
+
+    --color-primary: red;
+    --color-secondary: blue;
+    --color-tertiary: green;
+
+    --background-image-link: url("https://wallpapercave.com/wp/VRYA4rG.jpg");
+
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+header {
+    height: var(--header-height);
+    background-color: lightblue;
+}
+
+header div {
+    font-family: serif;
+}
+
+main {
+    height: calc(100vh - var(--header-height));
+
+    display: flex;
+    flex: 1;
+}
+
+.register-form {
+    margin: 2vh;
+    padding: 2vh;
+
+    width: 30%;
+    flex-direction: column;
+    
+
+    border-color: black;
+    border-style: solid;
+    border-width: 0.3vh;
+}
+
+footer {
+    height: var(--footer-height);
+    background-color: paleturquoise;
+}
+
+#image {
+    display: flex;
+    flex: 1;
+
+    background-image: var(--background-image-link);
+    background-position: center;
+    background-size: cover;
+  
+}
+

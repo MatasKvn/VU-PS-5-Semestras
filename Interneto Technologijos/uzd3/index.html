@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sudoku</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div>idk</div>
+    </header>
+
+    <main>
+        <form class="register-form">
+            <div class="form-element">
+                <label>Username:</label><br/>
+                <input type="text" name="username" required/>
+            </div>
+
+            <div class="form-element">
+                <label>Email:</label><br/>
+                <input type="email" name="email" required/>
+            </div>
+
+            <div class="form-element">
+                <label>Age:</label><br/>
+                <input type="range" name="age"/>
+            </div>
+
+            <div>
+                <!-- Form submit button -->
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <div id="image"></div>
+
+        <!-- Button for JavaScript interaction -->
+        <button id="asd">asd</button>
+    </main>
+
+    <footer></footer>
+    
+    <script>
+        // Ensure the script runs after the DOM is fully loaded
+        document.getElementById('asd').addEventListener('click', () => {
+            window.location.href = '/niga'
+        });
+    </script>
+</body>
+</html>
