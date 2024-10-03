@@ -4,39 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gaming</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <!-- <script src="index.js" type="module"></script> -->
     <base href=".">
 </head>
 <body>
     <header>
-        <div>idk</div>
     </header>
     <main>
-        <form class="register-form">
-            <div class="form-element">
-                <label>Username:</label><br/>
-                <input type="text" name="username"/>
+        <div class="list-container">
+            <h2>Items</h2>
+            <ul>
+                <li>
+                    Weapons
+                    <ol>
+                        <li>Epic Sword</li>
+                        <li>Bow</li>
+                    </ol>
+                </li>
+                <li>
+                    Ammo
+                    <ol>
+                        <li>Arrow</li>
+                    </ol>
+                </li>
+                <li>
+                    Potions
+                    <ol>
+                        <li>Health Potion</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="table-container">
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <td colspan="100%">
+                            <h2>Inventory</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="slot-cell">Slot</td>
+                        <td>Item</td>
+                        <td class="quantity-cell">Quantity</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="slot-cell">a</td>
+                        <td>
+                            <div class="img-wrapper">
+                                <img class="item-icon" src="https://w7.pngwing.com/pngs/734/639/png-transparent-terraria-video-game-blade-weapon-drawing-weapon.png">
+                            </div>
+                            <input class="item-input" value="Epic Sword">
+                        </td>
+                        <td class="quantity-cell" rowspan="2"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="slot-cell">b</td>
+                        <td>
+                            <div class="img-wrapper">
+                                <img class="item-icon" src="https://art.pixilart.com/75a6a90cf302f51.png">
+                            </div>
+                            <input class="item-input" value="Wooden Bow">
+                        </td>
+                        <!-- <td class="quantity-cell">1</td> -->
+                    </tr>
+                    
+                    <tr>
+                        <td class="slot-cell">c</td>
+                        <td>
+                            <div class="img-wrapper">
+                                <img class="item-icon" src="https://t4.ftcdn.net/jpg/07/11/37/69/360_F_711376939_orcZfQJbdroADKf2swzUyokKWc0vBsKP.jpg">
+                            </div>
+                            <input class="item-input" value="Arrow">
+                        </td>
+                        <td class="quantity-cell">
+                            <input value="94">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="slot-cell">d</td>
+                        <td>
+                            <div class="img-wrapper">
+                                <img class="item-icon" src="https://forums.terraria.org/index.php?attachments/healing_potion-png.175738/">
+                            </div>
+                            <input class="item-input" value="Health Potion">
+                        </td>
+                        <td class="quantity-cell">
+                            <input value="8">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">Total:</td>
+                        <td>102</td>
+                    </tr>
+                </table>
             </div>
-
-            <div class="form-element"></div>
-                <label>Email:</label><br/>
-                <input type="text" name="email" required pattern="^\w{1,255}@\w{1,255}.\w{1,255}$"/>
-            </div>
-        
-            <div class="form-element"></div>
-                <label>Age:</label><br/>
-                <input type="range" name="age"/>
-            </div>
-
-            <div>
-                <a href="./player/index.html">
-                    <button type="submit" value="submit">Register</button>
-                </a>
-            </div>
-        </form>
-        <div id="image"></div>
-        
+        </div>
     </main>
     <footer>
 

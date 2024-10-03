@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sudoku</title>
+    <title>Gamer</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
@@ -15,38 +15,72 @@
         <form class="register-form">
             <div class="form-element">
                 <label>Username:</label><br/>
-                <input type="text" name="username" required/>
+                <input type="text" name="username"/>
             </div>
 
             <div class="form-element">
                 <label>Email:</label><br/>
-                <input type="email" name="email" required/>
+                <input type="email" name="email"/>
+            </div>
+
+            <div class="form-element">
+                <label>Password:</label><br/>
+                <input type="password" name="password" required pattern="[a-zA-Z]+"/>
             </div>
 
             <div class="form-element">
                 <label>Age:</label><br/>
-                <input type="range" name="age"/>
+                <input 
+                    type="range"
+                    name="age"
+                    min="1"
+                    max="100"
+                    oninput="this.nextElementSibling.value = this.value"
+                    value="1"
+                />
+                <output></output>
             </div>
 
-            <div>
-                <!-- Form submit button -->
-                <button type="submit">Submit</button>
+            <div class="form-element">
+                <label>Gender:</label><br/>
+                <input 
+                    id="male-radio-button"
+                    class="radio-input"
+                    type="radio"
+                    name="gender"
+                    value="male"
+                >
+                <label for="male-radio-button">Male</label>
+                <input
+                    if="female-radio-button"
+                    class="radio-input"
+                    type="radio"
+                    name="gender"
+                    value="female"
+                >
+                <label for="female-radio-button">Female</label>
+            </div>
+
+            <div class="form-element">
+                <label for="selectxd">Gamer:</label>
+                <select id="selectxd">
+                    <option selected value style="display: none;"></option>
+                    <option>Amongus</option>
+                    <option>sus</option>
+                </select>
+            </div>
+
+            <div class="form-element">
+                <a class="submit-btn" href="./player">
+                    Register
+                    <!-- <button type="menu">aaaa</button> -->
+                </a>
             </div>
         </form>
 
         <div id="image"></div>
-
-        <!-- Button for JavaScript interaction -->
-        <button id="asd">asd</button>
     </main>
 
     <footer></footer>
-    
-    <script>
-        // Ensure the script runs after the DOM is fully loaded
-        document.getElementById('asd').addEventListener('click', () => {
-            window.location.href = '/niga'
-        });
-    </script>
 </body>
 </html>
