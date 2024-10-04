@@ -29,16 +29,16 @@
             </div>
 
             <div class="form-element">
-                <label>Age:</label><br/>
+                <label>Age:</label>
+                <output></output>
                 <input 
                     type="range"
                     name="age"
                     min="1"
                     max="100"
-                    oninput="this.nextElementSibling.value = this.value"
+                    oninput="this.previousElementSibling .value = this.value"
                     value="1"
                 />
-                <output></output>
             </div>
 
             <div class="form-element">

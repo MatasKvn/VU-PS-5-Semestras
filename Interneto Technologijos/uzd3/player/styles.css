@@ -1,38 +1,57 @@
-
 :root {
     --header-height: 7vh;
     --footer-height: 12vh;
 
-    --color-primary: red;
-    --color-secondary: blue;
+    --color-primary: white;
+    --color-secondary: lightblue;
     --color-tertiary: green;
+
+    --color-dark: #003060;
+
+    --gradient-1: linear-gradient(135deg, #055C9D, #68BBE3);
+    --gradient-2: linear-gradient(135deg, #003060, #055C9D);
+    
 
     --background-image-link: url("https://wallpapercave.com/wp/VRYA4rG.jpg");
 
-    --form-element-width: 70%;
+    --form-element-width: 80%;
 
 }
 
 body, html {
+    color: white;
+
     margin: 0;
+    min-width: 100%;
+    width: fit-content;
     height: 100%;
+
 }
 
 header {
     height: var(--header-height);
-    background-color: lightblue;
+    background: var(--gradient-2)
 }
 
 main {
-    height: calc(100vh - var(--header-height));
+    min-height: 100%;
 
     display: flex;
     flex: 1;
+    background: var(--gradient-1);
+}
+
+main > * {
+    color: black;
+    background: aliceblue;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 footer {
+    width: 100%;
     height: var(--footer-height);
-    background-color: paleturquoise;
+    background: var(--color-dark);
 }
 
 .list-container {
@@ -92,16 +111,52 @@ td * {
 }
 
 td, th {
+    /* background: linear-gradient(140deg, #9fdfff, #79d2ff); */
+    background: white;
+    color: black;
+
     justify-content: center;
     align-items: center;
     flex-direction: row;
 
     border-color: black;
     border: 1px solid;
+    border-radius: 0.5rem;
     padding: 0.5rem;
 
 }
 
 th:hover, td:hover {
-    background-color: #889eec;
+    background: #9fdfff;
+    cursor: pointer;
+}
+
+input {
+    height: 1.5rem;
+    border-radius: 5px;
+}
+
+.update-btn {
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    align-self: flex-end;
+    width: 10rem;
+    height: 2rem;
+}
+.list-wrapper {
+    
+    width: 100%;
+}
+
+
+@media screen and (max-aspect-ratio: 1/1.3){
+    main {
+        flex-direction: column;
+    }
+
+    .list-container {
+        width: unset;
+        height: fit-content;
+    }
+
 }

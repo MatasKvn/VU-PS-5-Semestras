@@ -10,31 +10,35 @@
 </head>
 <body>
     <header>
+        <h1>Inventory</h1>
     </header>
     <main>
         <div class="list-container">
-            <h2>Items</h2>
-            <ul>
-                <li>
-                    Weapons
-                    <ol>
-                        <li>Epic Sword</li>
-                        <li>Bow</li>
-                    </ol>
-                </li>
-                <li>
-                    Ammo
-                    <ol>
-                        <li>Arrow</li>
-                    </ol>
-                </li>
-                <li>
-                    Potions
-                    <ol>
-                        <li>Health Potion</li>
-                    </ol>
-                </li>
-            </ul>
+            <div class="list-wrapper">
+                <p>Hello guys! Welcome to GAME inventory editor!</p>
+                <h2>Items</h2>
+                <ul>
+                    <li>
+                        Weapons
+                        <ol>
+                            <li>Epic Sword</li>
+                            <li>Bow</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Ammo
+                        <ol>
+                            <li>Arrow</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Potions
+                        <ol>
+                            <li>Health Potion</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="table-container">
             <div class="table-wrapper">
@@ -81,7 +85,7 @@
                             <input class="item-input" value="Arrow">
                         </td>
                         <td class="quantity-cell">
-                            <input value="94">
+                            <input value="94" type="number" required pattern="^\d{1, 999}$"">
                         </td>
                     </tr>
                     
@@ -94,7 +98,7 @@
                             <input class="item-input" value="Health Potion">
                         </td>
                         <td class="quantity-cell">
-                            <input value="8">
+                            <input value="8" type="number" required pattern="^\d{1, 999}$">
                         </td>
                     </tr>
                     
@@ -104,6 +108,7 @@
                     </tr>
                 </table>
             </div>
+            <button class="update-btn">Update Inventory</button>
         </div>
     </main>
     <footer>
