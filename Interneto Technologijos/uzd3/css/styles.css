@@ -23,9 +23,20 @@ body, html {
     background-color: var(--color-primary);
 }
 
+h1 {
+    color: white;
+
+    margin: auto;
+}
+
 header {
     height: var(--header-height);
-    background: var(--gradient-1)
+    background: var(--gradient-1);
+
+    text-align: center;
+    justify-content: center;
+
+    display: flex;
 }
 
 form input:not(.radio-input) {
@@ -80,15 +91,26 @@ footer {
     display: block;
     padding: 0.5rem;
     
-    border-color: black;
+    border-color: #68BBE3;
     border-style: solid;
     border-width: 0.3vh;
     border-radius: 1rem;
     text-decoration: none;
+
+    background: #055C9D;
+    color: white;
+    font-weight: 1000;
     
     width: 50%;
 
     text-align: center;
+    transition: background-color 0.05s ease-out;
+
+}
+.submit-btn:hover {
+    background: white;
+    color: #68BBE3;
+
 }
 
 .form-element {
