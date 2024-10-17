@@ -18,6 +18,7 @@ struct Triangle {
         GLfloat vertices[3][3];
         GLfloat colors[3][3];
 };
+
 void drawTriangle(const Triangle& triangle) {
     glBegin(GL_TRIANGLES);
     for (int i = 0; i < 3; ++i) {
@@ -50,6 +51,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             UINT height = HIWORD(lParam);
             glViewport(0, 0, width, height);
             break;
+        }
+        case WM_KEYDOWN:
+        {
+            if (wParam == VK_ESCAPE) {
+                PostQuitMessage(0);
+            }
         }
         default:
             return DefWindowProc(hwnd, msg, wParam, lParam);
@@ -119,7 +126,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     HGLRC hrc = wglCreateContext(hdc);
 
     wglMakeCurrent(hdc, hrc);
-    BOOL bResult = SetWindowPos(hwnd, HWND_TOP, 500, 500, 500, 500, SWP_SHOWWINDOW);
+    BOOL bResult = SetWindowPos(hwnd, HWND_TOP, 0, 0, 400, 400, SWP_SHOWWINDOW);
 
     
 
@@ -132,8 +139,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         { {0.0f, -0.5f, 0.5f}, {0.0f, -0.5f, -0.5f}, {0.0f, 0.5f, 0.0f} },  // Vertices
         { {1.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f}, {0.0f, 0.0f, 1.0f} }     // Colors
     };
+
     triangles.push_back(triangle);
-    triangles.push_back(triangle2);
+    // triangles.push_back(triangle2);
 
     float angle = 0.0f;
 
@@ -161,21 +169,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
             // Reset transformations
             glLoadIdentity();
 
+            // Set rotation
             glRotatef(angle, 0, 1, 0);
-
 
             // Draw something (e.g., a triangle)
             for (auto& triangle : triangles) {
                 drawTriangle(triangle);
             }
-            // glBegin(GL_TRIANGLES);
-            // glColor3f(1.0f, 0.0f, 0.0f);
-            // glVertex3f(-0.5f, -0.5f, 0.0f);
-            // glColor3f(0.0f, 1.0f, 0.0f);
-            // glVertex3f(0.5f, -0.5f, 0.0f);
-            // glColor3f(0.0f, 0.0f, 1.0f);
-            // glVertex3f(0.0f, 0.5f, 0.0f);
-            // glEnd();
 
             
             angle += 5;

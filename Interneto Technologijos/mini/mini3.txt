@@ -1,0 +1,2 @@
+1: //book[author/@ref=//book[@id="bk104"]/author[1]/@ref]
+2: //div[position() mod 2 = 0]

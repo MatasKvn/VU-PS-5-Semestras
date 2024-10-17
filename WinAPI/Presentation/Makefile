@@ -19,8 +19,9 @@ clean:
 	rm -f main.exe
 
 do:
-	g++ -g --std=c++17 ./main.cpp -lopengl32 -lgdi32 -o main.exe
+	g++ -g --std=c++17 ./main.cpp -lopengl32 -lgdi32 -lglu32 -o main.exe
 	./main.exe
 
 other:
 	g++ -g --std=c++17 -I./include -L./lib ./other.cpp ./src/glad.c -lglfw3dll -o main.exe
+	./main.exe

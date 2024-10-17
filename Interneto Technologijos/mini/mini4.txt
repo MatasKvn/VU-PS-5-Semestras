@@ -1,0 +1,2 @@
+//book[number(price) = number(//book[@id="bk102"]/price)]
+count(//*[number(.) = number(.)])

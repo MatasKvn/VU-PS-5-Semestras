@@ -40,9 +40,6 @@ int main()
 
     // Register the framebuffer size callback
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    
-    GLuint vertexBuffer;
-    glGenBuffers(1, &vertexBuffer);
 
     // Render loop
     while (!glfwWindowShouldClose(window))
@@ -50,6 +47,15 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Process user input/events
+
+        glBegin(GL_TRIANGLES);
+        glColor3f(1, 0, 0);
+        glVertex3f(-0.5, -0.5, 0);
+        glColor3f(0, 1, 0);
+        glVertex3f(0.5, -0.5, 0);
+        glColor3f(0, 0, 1);
+        glVertex3d(0, 0.5, 0);
+        glEnd();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
