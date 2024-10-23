@@ -2,10 +2,11 @@
 
 CC=g++
 CFLAGS=-Wall -Wextra
-LDFLAGS=-lopengl32 -lgdi32 -lglu32
-IFLAGS=-I../include 
-LFLAGS=-L../lib
+LDFLAGS=-lopengl32 -lgdi32 
+IFLAGS=-I./include 
+LFLAGS=-L./lib
 
+g++ -lopengl32 -lgdi32 
 
 run: main
 	make main
@@ -18,6 +19,7 @@ main: main
 clean:
 	rm -f main.exe
 
-do:
-	g++ -g --std=c++17 ./main.cpp -lopengl32 -lgdi32 -lglu32 -o main.exe
+
+other:
+	g++ -g --std=c++17 -I./external/include ./other.cpp ./external/src/glad.c -lgdi32 -lopengl32 -lglu32 -o main.exe
 	./main.exe

@@ -4,11 +4,12 @@
 
 // OpenGL
 #include <GL/gl.h>
-#include <GL/glu.h>
 
 // std lib
 #include <iostream>
 #include <vector>
+
+#include <math.h>
 
 
 TCHAR szClassName[] = _T("myWindowClass");
@@ -27,6 +28,14 @@ void drawTriangle(const Triangle& triangle) {
     }
     glEnd();
 }
+
+struct Coords {
+    float x;
+    float y;
+    float z;
+};
+
+Coords cameraPos = {0.0f, 0.0f, 0.0f};
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -57,6 +66,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             if (wParam == VK_ESCAPE) {
                 PostQuitMessage(0);
             }
+            std::cout << cameraPos.x << " " << cameraPos.y << " " << cameraPos.z << std::endl;
+            break;
         }
         default:
             return DefWindowProc(hwnd, msg, wParam, lParam);
@@ -68,7 +79,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     LPSTR lpCmdLine, int nCmdShow)
 {
     WNDCLASSEX wc;
-    HWND hwnd;
+    // HWND hwnd;
     MSG Msg;
 
     //Step 1: Registering the Window Class
@@ -92,14 +103,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     }
 
     // Step 2: Creating the Window
-    hwnd = CreateWindowEx(
+    HWND hwnd = CreateWindowEx(
         WS_EX_CLIENTEDGE,
         szClassName,
-        _T("Win32 API Presentation"),
+        _T("WinAPI OpenGL Presentation"),
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT, 240, 120,
         NULL, NULL, hInstance, NULL
     );
+
+    ShowWindow(hwnd, nCmdShow);
+    UpdateWindow(hwnd);
 
     if(hwnd == NULL)
     {
@@ -120,13 +134,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     pfd.cColorBits = 32;
     pfd.cAlphaBits = 8;
     pfd.cDepthBits = 24;
-    // pfd.iLayerType = PFD_MAIN_PLANE;
+
     int pf = ChoosePixelFormat(hdc, &pfd);
     SetPixelFormat(hdc, pf, &pfd);
     HGLRC hrc = wglCreateContext(hdc);
 
     wglMakeCurrent(hdc, hrc);
-    BOOL bResult = SetWindowPos(hwnd, HWND_TOP, 0, 0, 400, 400, SWP_SHOWWINDOW);
+
+    // Resize Window
+    SetWindowPos(hwnd, HWND_TOP, 0, 0, 400, 400, SWP_SHOWWINDOW);
 
     
 
@@ -135,19 +151,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         { {-0.5f, -0.5f, 0.0f}, {0.5f, -0.5f, 0.0f}, {0.0f, 0.5f, 0.0f} },  // Vertices
         { {1.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f}, {0.0f, 0.0f, 1.0f} }     // Colors
     };
-    Triangle triangle2 = {
-        { {0.0f, -0.5f, 0.5f}, {0.0f, -0.5f, -0.5f}, {0.0f, 0.5f, 0.0f} },  // Vertices
-        { {1.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f}, {0.0f, 0.0f, 1.0f} }     // Colors
-    };
-
     triangles.push_back(triangle);
-    // triangles.push_back(triangle2);
 
     float angle = 0.0f;
-
     
-
-    // Main loop
+    // Message loop
     MSG msg;
     while (true)
     {
@@ -162,23 +170,35 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         }
         else
         {
+            angle += 5;
+
             // Clear the screen
-            glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            glClearColor(0.2f, 0.2f, 0.3f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
             // Reset transformations
             glLoadIdentity();
 
-            // Set rotation
+            // Translate & Rotate
+            glTranslatef(0.0f, sin(angle / 180.0f) / 3.0f , 0.5f);
             glRotatef(angle, 0, 1, 0);
 
-            // Draw something (e.g., a triangle)
-            for (auto& triangle : triangles) {
-                drawTriangle(triangle);
-            }
-
+            // Draw a triangle
+            glBegin(GL_TRIANGLES);
             
-            angle += 5;
+                // Vertex 1
+                glColor3f(1.0f, 0.0f, 0.0f);
+                glVertex3f(-0.5f, -0.5f, 0.0f);
+
+                // Vertex 2
+                glColor3f(0.0f, 1.0f, 0.0f);
+                glVertex3f(0.5f, -0.5f, 0.0f);
+                
+                // Vertex 3
+                glColor3f(0.0f, 0.0f, 1.0f);
+                glVertex3f(0.0f, 0.5f, 0.0f);
+
+            glEnd();
 
             // Swap the buffers
             SwapBuffers(hdc);
@@ -187,6 +207,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         }
     }
 
+    
     ReleaseDC(hwnd, hdc);
     wglDeleteContext(hrc);
     DestroyWindow(hwnd);
