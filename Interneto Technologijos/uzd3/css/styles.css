@@ -16,6 +16,10 @@
 
 }
 
+* {
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
 body, html {
 
     margin: 0;
@@ -88,6 +92,7 @@ footer {
 }
 
 .submit-btn {
+    margin: inherit;
     display: block;
     padding: 0.5rem;
     

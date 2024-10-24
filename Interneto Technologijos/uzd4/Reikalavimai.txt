@@ -1,0 +1,11 @@
+1:
+    a: board.js eil. 88
+    b: board.js eil. 55
+2: index.js eil. 22
+3: 
+    a: board.js eil. 43
+    b: board.js eil 96
+4: 
+    a: sudokuApi.js
+    b: board.js 77
+    

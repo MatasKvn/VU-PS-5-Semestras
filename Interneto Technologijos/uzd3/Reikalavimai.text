@@ -1,0 +1,21 @@
+Punktus 1 ir 2 tiesiog html failuose
+
+3:
+    Skyrius ir paragrafas:
+        Skyrius: player/index.html eil. 13
+        Paragrafas: player/index.html eil. 17
+    Paveiksliukas: player/index.html eil. 59
+    Nuoroda: index.html eil. 74
+    Lentele: player/index.html eil. 43
+    Sarasas: player/index.html eil. 19
+    Forma: index.html eil. 15
+    Pasirinkimas: index.html eil.  66
+4:
+    Descendant: css/styles.css eil. 46
+    Child: player/styles.css eil. 53
+    Attribute: css/styles.css eil. 115
+    Class: css/styles.css eil. 94
+    ID: css/styles.css eil. 79
+5: css/styles.css eil. 96
+6: css/styles.css eil 20
+7: css/styles.css eil. 133
