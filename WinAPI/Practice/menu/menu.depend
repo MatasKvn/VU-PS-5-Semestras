@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1663837478 source:c:\users\tomas plankis\desktop\menu\main.cpp
+	<tchar.h>
+	"menu.h"
+
+1663828156 c:\users\tomas plankis\desktop\menu\menu.h
+	<windows.h>
+
+1663839613 source:c:\users\tomas plankis\desktop\menu\menu.rc
+	"menu.h"
+
+1663839613 source:c:\users\andrius\desktop\univeras\winapi\menu\menu.rc
+	"menu.h"
+
+1726739688 c:\users\andrius\desktop\univeras\winapi\menu\menu.h
+	<windows.h>
+
+1726739079 source:c:\users\andrius\desktop\univeras\winapi\menu\main.cpp
+	<tchar.h>
+	<iostream>
+	"menu.h"
+
+1726739728 source:d:\5 semestras\winapi\practice\menu\main.cpp
+	<tchar.h>
+	<iostream>
+	"menu.h"
+
+1726739690 d:\5 semestras\winapi\practice\menu\menu.h
+	<windows.h>
+
+1663839614 source:d:\5 semestras\winapi\practice\menu\menu.rc
+	"menu.h"
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Jonas>
+    <Parkeris />
+    <PriespieciuDezute>
+        <Priespieciai>
+            5
+        </Priespieciai>
+        <Batonelis>
+            Twix
+        </Batonelial>
+    </PriespieciuDezute>
+    <Telefonas>
+        <OS>
+            Android
+        </OS>
+        <ClashOfClans/>
+    </Telefonas>
+</Jonas>

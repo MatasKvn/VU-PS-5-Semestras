@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1726122097 source:c:\users\tomas plankis\desktop\firstapi\main.cpp
+	<tchar.h>
+	<windows.h>
+	"stuff.h"
+
+1726122097 c:\users\tomas plankis\desktop\firstapi\stuff.h
+
+1726122097 source:c:\users\tomas plankis\desktop\firstapi\stuff.rc
+	"stuff.h"
+
+1726122218 source:d:\5 semestras\winapi\practice\firstapi\main.cpp
+	<tchar.h>
+	<windows.h>
+	"stuff.h"
+
+1726122098 d:\5 semestras\winapi\practice\firstapi\stuff.h
+
+1726122098 source:d:\5 semestras\winapi\practice\firstapi\stuff.rc
+	"stuff.h"
+
