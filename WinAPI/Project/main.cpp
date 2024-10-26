@@ -14,7 +14,7 @@ int main() {
     HINSTANCE lib;
     typedef void (__cdecl *MYPROC)(LPCSTR);
     MYPROC thatFunction;
-    lib = LoadLibrary(".//includee//DLL_project.dll");
+    lib = LoadLibrary(".//dll//DLL_project.dll");
     if (lib != NULL){
         thatFunction = (MYPROC) GetProcAddress(lib, "SomeFunction");
         if (thatFunction != NULL){
