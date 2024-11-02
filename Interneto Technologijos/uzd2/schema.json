@@ -1,0 +1,223 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "World schema",
+    "description": "world schema description",
+    "type": "object",
+    "properties": {
+        "world": {
+            "$ref": "#/definitions/world"
+        }
+    },
+    "required": [
+        "world"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+        "world": {
+            "properties": {
+                "version": {
+                    "type": "string",
+                    "pattern": "^[0-9]+.[0-9]+$"
+                },
+                "dateCreated": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "name": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_]+$"
+                },
+                "dimension": {
+                    "enum": [
+                        "overworld",
+                        "nether"
+                    ]
+                },
+                "players": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/player"
+                    },
+                    "minimum": 1,
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "version",
+                "dateCreated",
+                "name",
+                "dimension",
+                "players"
+            ]
+        },
+        "player": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                },
+                "isAdmin": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_]+$"
+                },
+                "dateJoined": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "maxHealth": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "currentHealth": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "position": {
+                    "$ref": "#/definitions/position"
+                },
+                "inventory": {
+                    "$ref": "#/definitions/inventory"
+                },
+                "stats": {
+                    "$ref": "#/definitions/stats"
+                },
+                "specialAbility": {
+                    "$ref": "#/definitions/specialAbility"
+                }
+            },
+            "required": [
+                "id",
+                "isAdmin",
+                "name",
+                "dateJoined",
+                "maxHealth",
+                "currentHealth",
+                "position",
+                "inventory",
+                "stats",
+                "specialAbility"
+            ]
+        },
+        "position": {
+            "type": "object",
+            "properties": {
+                "x": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "y": {
+                    "type": "number",
+                    "minimum": 0
+                }
+            },
+            "required": [
+                "x",
+                "y"
+            ]
+        },
+        "inventory": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/stackableItem"
+                    },
+                    {
+                        "$ref": "#/definitions/nonStackableItem"
+                    }
+                ]
+            }
+        },
+        "stackableItem": {
+            "type": "object",
+            "properties": {
+                "itemType": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_]+$"
+                },
+                "quantity": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            },
+            "required": [
+                "itemType",
+                "quantity"
+            ]
+        },
+        "nonStackableItem": {
+            "type": "object",
+            "properties": {
+                "itemType": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_]+$"
+                }
+            },
+            "required": [
+                "itemType"
+            ]
+        },
+        "stats": {
+            "allOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "attack": {
+                            "type": "number",
+                            "minimum": 0
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "defense": {
+                            "type": "number",
+                            "minimum": 0
+                        }
+                    }
+                }
+            ],
+            "required": [
+            ]
+        },
+        "specialAbility": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "flameBreath": {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    },
+                    "required": ["flameBreath"]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "flight": {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    },
+                    "required": ["flight"]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "none": {
+                            "type": "null"
+                        }
+                    },
+                    "required": ["none"]
+                }
+            ]
+        }
+    }
+}

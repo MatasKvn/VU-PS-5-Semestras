@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<world:world version="1.3"
+    xmlns:world="urn:world"
+>
+    <dateCreated>2024-09-26</dateCreated>
+    <worldName>XML_Pasaulis</worldName>
+
+    <!--Lab 2 addition-->
+    <dimension seed="12345">
+        <overworld/>
+    </dimension>
+
+    <players>
+        <player id="1" isAdmin="true">
+            <name>XML_Entuziastas</name>
+            <dateJoined>2024-09-26</dateJoined>
+            <maxhealth>500.0</maxhealth>
+            <currentHealth>459.0</currentHealth>
+            <position>
+                <x>17.93</x>
+                <y>226.6</y>
+            </position>
+            <inventory>
+                <item itemType="ironSword" />
+                <item itemType="woodenBow" />
+                <item itemType="flintArrow">
+                    <quantity>67</quantity>
+                </item>
+                <item itemType="healingPotion">
+                    <quantity>8</quantity>
+                </item>
+            </inventory>
+        </player>
+
+        <player id="2" isAdmin="false">
+            <name>JSON_Mėgėjas</name>
+            <dateJoined>2024-09-26</dateJoined>
+            <maxhealth>500.0</maxhealth>
+            <currentHealth>23.0</currentHealth>
+            <position>
+                <x>17.93</x>
+                <y>226.6</y>
+            </position>
+            <inventory>
+                <item itemType="goldSword" />
+                <item itemType="ironBow" />
+                <item itemType="ironArrow">
+                    <quantity>67</quantity>
+                </item>
+                <item itemType="healingPotion">
+                    <quantity>8</quantity>
+                </item>
+            </inventory>
+        </player>
+
+        <player id="3" isAdmin="false">
+            <name>HTML_Fanas</name>
+            <dateJoined>2024-09-26</dateJoined>
+            <maxhealth>500.0</maxhealth>
+            <currentHealth>500.0</currentHealth>
+            <position>
+                <x>17.93</x>
+                <y>226.6</y>
+            </position>
+            <inventory>
+                <item itemType="goldSword" />
+                <item itemType="ironBow" />
+                <item itemType="ironArrow">
+                    <quantity>67</quantity>
+                </item>
+                <item itemType="healingPotion">
+                    <quantity>8</quantity>
+                </item>
+            </inventory>
+        </player>
+    </players>
+</world:world>
