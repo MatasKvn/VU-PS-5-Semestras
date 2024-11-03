@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           attributeFormDefault="unqualified"
+>
+    <xs:element name="apps" type="AppsType"></xs:element>
+
+    <xs:complexType name="AppsType">
+        <xs:sequence>
+            <xs:element name="app" type="AppType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AppType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" maxOccurs="1"/>
+            <xs:element name="type" type="xs:string" maxOccurs="1"/>
+            <xs:element name="size" type="xs:integer" maxOccurs="1"/>
+            <xs:element name="installDate" type="installDateType" maxOccurs="1"/>
+            <xs:element name="permissions" type="permissionsType" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="version" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="installDateType">
+        <xs:sequence>
+            <xs:element name="year" type="xs:integer" maxOccurs="1"/>
+            <xs:element name="month" type="xs:integer" maxOccurs="1"/>
+            <xs:element name="day" type="xs:integer" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="timezone" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="permissionsType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Read"></xs:enumeration>
+            <xs:enumeration value="Write"></xs:enumeration>
+            <xs:enumeration value="Read and Write"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

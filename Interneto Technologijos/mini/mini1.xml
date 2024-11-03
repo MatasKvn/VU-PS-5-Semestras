@@ -1,5 +1,5 @@
 <apps>
-    <VSCode version="3.1.7">
+    <app version="3.1.7">
         <name>Visual Studio Code</name>
         <type>IDE</type>
         <size>503006098</size>
@@ -9,8 +9,9 @@
             <day>05</day>
         </installDate>
         <permissions>Read and Write</permissions>
-    </VSCode>
-    <googleChrome version="5.13">
+    </app>
+    <app version="5.13">
+        <name>Firefox</name>
         <type>Browser</type>
         <size>1360589909</size>
         <installDate timezone="-7">
@@ -18,6 +19,6 @@
             <month>12</month>
             <day>24</day>
         </installDate>
-    </googleChrome>
-    <permissions>Read and Write</permissions>
+        <permissions>Read and Write</permissions>
+    </app>
 </apps>
