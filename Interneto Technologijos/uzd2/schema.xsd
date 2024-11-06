@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:world="urn:world" 
+           xmlns:lole="urn:lole"
+           targetNamespace="urn:world" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+    <xs:element name="world" type="world:WorldType"/>
+
+    <xs:complexType name="WorldType">
+        <xs:sequence>
+            <xs:element name="dateCreated" type="xs:date" maxOccurs="1"/> <!-- 1 -->
+            <xs:element name="worldName" type="xs:string" maxOccurs="1"/>
+            <xs:element name="dimension" type="world:DimensionType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="players" type="world:PlayersType"/>
+        </xs:sequence>
+        <xs:attribute name="version" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    
+
+    <!-- 7 -->
+    <!-- Lab 2 addition -->
+    <xs:complexType name="DimensionType">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="overworld" type="xs:string"/>
+                <xs:element name="nether" type="xs:string"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="seed" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <!-- 2 -->
+    <xs:complexType name="PlayersType">
+        <xs:sequence>
+            <xs:element name="player" type="world:PlayerType" maxOccurs="unbounded">
+                <!-- 8 -->
+                <xs:key name="playerIdKey">
+                    <xs:selector xpath="."/>
+                    <xs:field xpath="@id"/>
+                </xs:key>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- 6 -->
+    <xs:complexType name="PlayerType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" maxOccurs="1"/>
+            <xs:element name="dateJoined" type="xs:string" maxOccurs="1"/>
+            <xs:element name="maxhealth" type="xs:string" maxOccurs="1"/>
+            <xs:element name="currentHealth" type="xs:string" maxOccurs="1"/>
+            <xs:element name="position" type="world:PositionType" maxOccurs="1"/>
+            <xs:element name="inventory" type="world:InventoryType" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="isAdmin" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="PositionType">
+        <xs:sequence>
+            <xs:element name="x" type="xs:decimal" maxOccurs="1"/>
+            <xs:element name="y" type="xs:decimal" maxOccurs="1"/>
+        </xs:sequence>    
+    </xs:complexType>
+
+    <!-- 4.2 -->
+    <!-- Not used -->
+    <xs:complexType name="Position3DType">
+        <xs:complexContent>
+            <xs:extension base="world:PositionType">
+                <xs:sequence>
+                    <xs:element name="z" type="xs:decimal" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- 4.1 -->
+    <!-- Not used (integer position) -->
+    <xs:complexType name="PositionTypeV2">
+        <xs:complexContent>
+            <xs:restriction base="world:PositionType">
+                <xs:sequence>
+                    <xs:element name="x" type="xs:integer" maxOccurs="1"/>
+                    <xs:element name="y" type="xs:integer" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="InventoryType">    
+        <xs:sequence>
+            <xs:element name="item" type="world:ItemType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ItemType">
+        <xs:sequence>  
+            <xs:element name="quantity" type="world:QuantityType" maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="itemType" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- 3.1 -->
+    <xs:simpleType name="QuantityType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 8 -->
+    <!-- Not used -->
+    <xs:complexType name="AdminsRefType">
+        <xs:sequence>
+            <xs:element name="item" type="world:PlayerType">
+                <xs:keyref name="IDREF" refer="world:playerIdKey">
+                    <xs:selector xpath="."/>
+                    <xs:field xpath="@id"/>
+                </xs:keyref>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>

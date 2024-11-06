@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1665639591 source:c:\users\tomas plankis\desktop\drawing\drawing.rc
+	"drawing.h"
+
+1665639591 c:\users\tomas plankis\desktop\drawing\drawing.h
+
+1665643230 source:c:\users\tomas plankis\desktop\drawing\main.cpp
+	<tchar.h>
+	<windows.h>
+	"drawing.h"
+
+1665639592 source:d:\5 semestras\winapi\practice\drawing\drawing.rc
+	"drawing.h"
+
+1665639592 d:\5 semestras\winapi\practice\drawing\drawing.h
+
+1729946401 source:d:\5 semestras\winapi\practice\drawing\main.cpp
+	<tchar.h>
+	<windows.h>
+	"drawing.h"
+

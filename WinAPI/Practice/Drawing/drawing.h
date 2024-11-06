@@ -1,0 +1,5 @@
+
+#define ID_MENU_MAIN 10000
+#define IDM_FILE_NEW 10001
+#define IDM_FILE_OPEN 10002
+#define IDM_FILE_EXIT 10003
