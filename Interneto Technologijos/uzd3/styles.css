@@ -8,7 +8,7 @@
 
     --gradient-1: linear-gradient(135deg, #055C9D, #68BBE3);
     --gradient-2: linear-gradient(135deg, #003060, #055C9D);
-    
+
 
     --background-image-link: url("https://wallpapercave.com/wp/VRYA4rG.jpg");
 
@@ -16,12 +16,8 @@
 
 }
 
-* {
-    font-family: 'Courier New', Courier, monospace !important;
-}
-
 body, html {
-
+    font: 1rem 'Fira Sans', sans-serif !important;
     margin: 0;
     height: 100%;
     background-color: var(--color-primary);
@@ -29,7 +25,6 @@ body, html {
 
 h1 {
     color: white;
-
     margin: auto;
 }
 
@@ -43,7 +38,7 @@ header {
     display: flex;
 }
 
-form input:not(.radio-input) {
+form input:not([type="radio"]) {
     margin-top: 0.3rem;
     width: 100%;
 }
@@ -63,7 +58,7 @@ main {
 
     width: 30%;
     flex-direction: column;
-    
+
 
     /* border-color: black;
     border-style: solid;
@@ -92,10 +87,9 @@ footer {
 }
 
 .submit-btn {
-    margin: inherit;
     display: block;
     padding: 0.5rem;
-    
+    margin: inherit;
     border-color: #68BBE3;
     border-style: solid;
     border-width: 0.3vh;

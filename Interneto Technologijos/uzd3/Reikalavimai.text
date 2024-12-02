@@ -1,5 +1,5 @@
-Punktus 1 ir 2 tiesiog html failuose
-
+Reikalavimai
+1, 2: galima rasti tiesiog failuose
 3:
     Skyrius ir paragrafas:
         Skyrius: player/index.html eil. 13
@@ -11,11 +11,17 @@ Punktus 1 ir 2 tiesiog html failuose
     Forma: index.html eil. 15
     Pasirinkimas: index.html eil.  66
 4:
-    Descendant: css/styles.css eil. 46
+    Descendant: player/styles.css eil. 90
     Child: player/styles.css eil. 53
-    Attribute: css/styles.css eil. 115
-    Class: css/styles.css eil. 94
-    ID: css/styles.css eil. 79
-5: css/styles.css eil. 96
-6: css/styles.css eil 20
-7: css/styles.css eil. 133
+    Attribute: styles.css eil. 41
+    Class: styles.css eil. 53
+    ID: styles.css eil. 74
+5: styles.css eil. 92
+6: styles.css eil 20
+7: styles.css eil. 127
+
+Pasigyrimai:
+- Panaudotas "Flexbox" (styles.css eil. 46)
+- Panaudoti linear-gradient (styles.css eil. 9-10)
+- Panaudotas "background-image" and div, su kuriuo padaryta, kad gražiai keistusi nuotrauka, keičiant plotį ir aukštį (styles.css eil. 84)
+- Panaudotas "transition" (styles.css eil. 106)

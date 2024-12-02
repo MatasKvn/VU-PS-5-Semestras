@@ -5,8 +5,7 @@ run: build
 	$(OUTPUT)project.exe
 
 build: main.o file1.o file2.o
-	g++ $(OUTPUT)main.o $(OUTPUT)file1.o $(OUTPUT)file2.o -o $(OUTPUT)/project.exe
-
+	g++ $(OUTPUT)main.o $(OUTPUT)file1.o $(OUTPUT)file2.o -o $(OUTPUT)project.exe -ld2d1 -lwindowscodecs 
 main.o: main.cpp file1.o file2.o
 	g++ -c main.cpp -Isrc -o $(OUTPUT)$@
 

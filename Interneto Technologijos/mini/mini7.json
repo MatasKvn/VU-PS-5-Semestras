@@ -1,0 +1,30 @@
+{
+    "apps": [
+        {
+            "name": "Visual Studio Code",
+            "version": "3.1.7",
+            "type": "IDE",
+            "size": 503006098,
+            "installDate": {
+                "timezone": "+3",
+                "year": 2021,
+                "month": 9,
+                "day": 5
+            },
+            "permissions": "Read and Write"
+        },
+        {
+            "name": "Google Chrome",
+            "version": "5.13",
+            "type": "Browser",
+            "size": 1360589909,
+            "installDate": {
+                "timezone": "-7",
+                "year": 2018,
+                "month": 12,
+                "day": 24
+            },
+            "permissions": "Read and Write"
+        }
+    ]
+}
