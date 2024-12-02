@@ -24,4 +24,4 @@ Pasigyrimai:
 - Panaudotas "Flexbox" (styles.css eil. 46)
 - Panaudoti linear-gradient (styles.css eil. 9-10)
 - Panaudotas "background-image" and div, su kuriuo padaryta, kad gražiai keistusi nuotrauka, keičiant plotį ir aukštį (styles.css eil. 84)
-- Panaudotas "transition" (styles.css eil. 106)
+- Panaudotas "transition", kuris padaro gražų spalvų pakeitima ant "Register" mygtuko (styles.css eil. 106)
